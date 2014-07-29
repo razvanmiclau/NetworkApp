@@ -1,5 +1,7 @@
 NetworkApp::Application.routes.draw do
 
+  resources :statuses
+
   resources :sessions
   resources :users
 

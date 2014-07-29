@@ -1,0 +1,49 @@
+
+<h1>Sign Up Now.</h1>
+
+<div class="row">
+	<div class="col-md-6">
+		<p>
+			<%= form_for @user do |f| %>
+				<% if @user.errors.any? %>
+					<ul>
+						<% @user.errors.full_messages.each do |e| %>
+							<li><%= e %></li>
+						<% end %>
+					</ul>
+				<% end %>
+
+			<div class="form-group">
+				<%= f.text_field :email, placeholder: "email", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.text_field :name, placeholder: "name", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.text_field :username, placeholder: "username", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.password_field :password, placeholder: "password", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.password_field :password_confirmation, placeholder: "password(again)", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.submit "Create Account", class: 'form-control' %>
+			</div>	
+
+			<% end %>
+		</p>
+	</div>
+
+	<div class="col-md-6">
+		<h3>The Latest Social Network on the web</h3>
+		<p>Don't have an account already? What are you waiting for? Jump now on the latest social network on the web!</p>
+		<p>You just have to fill in the form on the left and you're ready to go.</p>
+	</div>
+</div>

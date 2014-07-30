@@ -1,0 +1,18 @@
+<div class="panel panel-default statusPanel">
+	<h4>How do you feel today?</h4>
+	<%= form_for @status do |f| %>
+		<%= f.text_area :content, class: 'form-control', placeholder: "Add your status here..." %>
+		
+	<div class="row">
+		<div class="col-md-6">
+			<%= f.submit "Submit", class: 'btn btn-primary' %>
+			
+		</div>
+
+		<div class="col-md-6">
+			<p>Number of Characters: <span id="charCount">0</span></p>
+		</div>
+	</div>		
+		
+	<% end %>
+</div>

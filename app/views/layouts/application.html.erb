@@ -14,9 +14,11 @@
 
 <div class="container">
   <div class="row">
-    <% flash.each do |name, msg| %>
+    <div class="col-md-12">
+      <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "flash #{name}" %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

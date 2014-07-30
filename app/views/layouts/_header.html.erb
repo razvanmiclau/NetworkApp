@@ -22,7 +22,7 @@
       <ul class="nav navbar-nav navbar-right">
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @user.username %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Your Profile <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Profile</a></li>
               <li><a href="#">Settings</a></li>
@@ -37,7 +37,7 @@
 
   <% else %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form navbar-right">
+      <div class="navbar-form navbar-right">
           <%= form_tag sessions_path do %>
             <div class="form-group">
               <%= text_field_tag :username, nil, placeholder: "username", class: 'form-control' %>
@@ -45,7 +45,7 @@
               <%= submit_tag "Log In", class: 'btn btn-primary' %>
             </div>
           <% end %>
-        </form>
+      </div>
     </div>
   <% end %>
 

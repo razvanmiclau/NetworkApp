@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+	
+	def index
+		@users = User.all
+		@status = Status.new
+	end
+
 	def new
 		@user = User.new
 	end

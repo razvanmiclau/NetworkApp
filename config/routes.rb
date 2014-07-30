@@ -1,5 +1,7 @@
 NetworkApp::Application.routes.draw do
 
+  resources :friendships
+
   resources :statuses
 
   resources :sessions

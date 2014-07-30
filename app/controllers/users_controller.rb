@@ -17,6 +17,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@status = Status.new
 		@statuses = Status.all
+		@friendship = Friendship.where(
+			follower_id: current_user.id,
+			followed_id: @user.id
+		).first_or_initialize if current_user
 	end
 
 	private

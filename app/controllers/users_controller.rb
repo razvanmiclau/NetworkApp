@@ -6,7 +6,11 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		@user = User.new
+		if current_user
+			redirect_to friends_path
+		else
+			@user = User.new
+		end
 	end
 
 	def create
@@ -27,6 +31,16 @@ class UsersController < ApplicationController
 			follower_id: current_user.id,
 			followed_id: @user.id
 		).first_or_initialize if current_user
+	end
+
+	def friends
+		if current_user
+			@status = Status.new
+			friends_ids = current_user.followeds.map(&:id).push(current_user.id)
+			@statuses = Status.find_all_by_user_id friends_ids
+		else
+			redirect_to root_url
+		end
 	end
 
 	private

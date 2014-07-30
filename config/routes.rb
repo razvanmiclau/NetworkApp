@@ -1,13 +1,12 @@
 NetworkApp::Application.routes.draw do
 
   resources :friendships
-
   resources :statuses
-
   resources :sessions
   resources :users
 
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'friends', to: 'users#friends', as: 'friends'
 
   root 'users#new'
 

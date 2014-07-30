@@ -1,4 +1,10 @@
 class StatusesController < ApplicationController
+	
+	def index
+		@statuses = Status.all
+		@status = Status.new
+	end
+
 	def create
 		status = Status.new(status_params)
 		status.user_id = current_user.id

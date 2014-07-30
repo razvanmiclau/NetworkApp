@@ -14,6 +14,12 @@
 			<img src="<%= @user.avatar_url %>" alt=""
 		>
 			<span>@<%= @user.username %></span>
+			
+			<div class="row">
+				<div class="col-md-4"><%= @user.statuses.length %> Statuses</div>
+				<div class="col-md-4">XX Followers</div>
+				<div class="col-md-4">XX Following</div>
+			</div>
 		</div>
 	</div>
 
@@ -22,5 +28,10 @@
 			<%= render 'statuses/new_form' %>
 		</div>
 	<% end %>
-	
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		Statuses Goes here...
+	</div>
 </div>

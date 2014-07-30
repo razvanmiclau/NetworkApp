@@ -15,11 +15,17 @@
 				<img class="media-object pull-left" src="<%= @user.avatar_url %>" alt=""/>
 				<div class="media-body">
 					<h4>@<%= @user.username %></h4>
+					<small>- <%= link_to("(edit profile)", edit_user_path(@user)) if @user == current_user %></small>
 					<span>
 						<%= @user.statuses.length %> Statuses | 
 						<%= @user.followers.length %>  Followers |
 						<%= @user.followeds.length %> Following
 					</span>
+
+					<% if @user.bio %>
+						<h5>Bio</h5>
+						<p><%= @user.bio %></p>
+					<% end %>
 
 					<% if current_user && @user != current_user %>
 						<% if current_user.following? @user %>
